@@ -1,11 +1,13 @@
+import {useState} from "react";
 import logo from './logo.svg';
 import './Todo.css';
 
 function Todo() {
+  const [task, setTask] = useState("");
+
   const handleInputTask = (event) => {
-    console.log(event);
     let inputTask = event.target.value;
-    console.log(inputTask);
+    setTask(inputTask)
   }
   return (
     <div className="Todo-wraper">
@@ -15,7 +17,7 @@ function Todo() {
           <button type="submit">Adicionar</button>
         </form>
         <ul>
-          <li>Item</li>
+          <li>{task}</li>
         </ul>
     </div>
   );
